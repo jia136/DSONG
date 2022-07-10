@@ -46,27 +46,6 @@ architecture Behavioral of switch is
     signal current_value: std_logic_vector(data_width-1 downto 0) := (others=>'0');
     signal error_s : std_logic :='0';
 begin
-   
---    logic_process: process(init_i,mac_i,voter_i,error_s)
---    begin
---      if(sw_s = voter_i and error_s = '0') then
---          sw_s <= mac_i;
---          sw_o <= mac_i;
---          report "line 55";
---      else
---          if(init_i = '0') then
---              error_s <= '1';
---              sw_s <= (others=>'0');
---              sw_o <= (others=>'0');                       
---          else
---              error_s <= '0';
---              sw_o <= mac_i;
---              sw_s <= mac_i;
---              report "line 66"; 
---          end if;           
---      end if;               
---    end process logic_process;
-
 
     sw_process: process(error_s,mac_i)
     begin
